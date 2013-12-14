@@ -24,7 +24,7 @@
     "yum::epel",
     "yum::remi",
     "common-packages",
-    "iptable",
+    "iptables",
     "nginx",
     "mysql",
     "mysql::server",

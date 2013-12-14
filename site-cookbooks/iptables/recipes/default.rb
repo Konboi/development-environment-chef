@@ -6,3 +6,11 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+package "iptables"
+
+service "iptables" do
+  supports :status => true, :stop => true
+  action [:disable, :stop]
+end
+
