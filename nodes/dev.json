@@ -1,1 +1,34 @@
-{"run_list":[]}
+{
+  "user": {
+      "name": "vagrant",
+      "home": "/home/vagrant"
+  },
+  
+  "rbenv": {
+    "user_installs": [
+      {
+        "user": "vagrant",
+        "rubies": ["2.0.0-p353"],
+        "global": "2.0.0-p353",
+         "gems": {
+           "2.0.0-p353": [
+             {"name": "bundler"},
+             {"name": "rails"}
+          ]
+        }
+      }
+    ]
+  },
+  "run_list":[
+    "yum",
+    "yum::epel",
+    "yum::remi",
+    "common-packages",
+    "iptable",
+    "nginx",
+    "mysql",
+    "mysql::server",
+    "ruby_build",
+    "rbenv::user"
+  ]
+}

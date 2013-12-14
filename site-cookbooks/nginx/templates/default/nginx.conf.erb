@@ -1,0 +1,53 @@
+user nginx;
+worker_processes  1;
+worker_rlimit_nofile 8192;
+
+error_log  /var/log/nginx/error.log;
+pid        /var/run/nginx.pid;
+
+events {
+  worker_connections  8192;
+}
+
+http {
+
+  include       /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+
+  log_format ltsv "time:$time_local"
+                  "\thost:$remote_addr"
+                  "\tforwardedfor:$http_x_forwarded_for"
+                  "\treq:$request"
+                  "\tstatus:$status"
+                  "\tsize:$body_bytes_sent"
+                  "\treferer:$http_referer"
+                  "\tua:$http_user_agent"
+                  "\treqtime:$request_time"
+                  "\tupsttime:$upstream_response_time"
+                  "\tcache:$upstream_http_x_cache"
+                  "\truntime:$upstream_http_x_runtime"
+                  "\tvhost:$host";
+
+  access_log        /var/log/nginx/access.log;
+
+  sendfile on;
+  tcp_nopush on;
+  tcp_nodelay on;
+
+  keepalive_timeout  65;
+
+  gzip  on;
+  gzip_http_version 1.0;
+  gzip_comp_level 2;
+  gzip_proxied any;
+  gzip_vary off;
+  gzip_types text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript application/json;
+  gzip_min_length  1000;
+  gzip_disable     "MSIE [1-6]\.";
+
+  server_names_hash_bucket_size 64;
+  types_hash_max_size 2048;
+  types_hash_bucket_size 64;
+
+  include /etc/nginx/vhost.d/*.conf;
+}

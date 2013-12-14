@@ -7,37 +7,44 @@
 # All rights reserved - Do Not Redistribute
 #
 packages = %w(
-"curl"
-"gcc-c++"
-"libpng"
-"libpng-devel"
-"giflib"
-"giflib-devel"
-"libjpeg"
-"subversion"
-"telnet"
-"nc"
-"iotop"
-"dstat"
-"vim-enhanced"
-"ack"
-"mlocate"
-"sysstat"
-"file"
-"lsof"
-"git"
-"ngrep"
-"libmemcached"
-"libmemcached-devel"
-"bind-utils"
-"strace"
-"tmux"
-"irqbalance"
-"screen"
-"ImageMagick"
- "ImageMagick-devel"
+curl
+gcc-c++
+libpng
+libpng-devel
+giflib
+giflib-devel
+libjpeg
+subversion
+telnet
+nc
+iotop
+dstat
+vim-enhanced
+ack
+mlocate
+sysstat
+file
+lsof
+git
+ngrep
+libmemcached
+libmemcached-devel
+bind-utils
+strace
+tmux
+irqbalance
+screen
+ImageMagick
+ImageMagick-devel
+openssl
+openssl-devel 
+readline 
+libyaml-devel 
+readline-devel 
+zlib 
+zlib-devel
 )
 
-pakcages.each do |p|
+packages.each do |p|
     package p
 end
