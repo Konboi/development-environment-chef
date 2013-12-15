@@ -8,6 +8,11 @@
         "rails"
     ],
 
+    "npm": [
+        "jshint",
+        "grunt-cli"
+    ],
+
     "run_list":[
         "yum",
         "yum::epel",
@@ -17,9 +22,11 @@
         "nginx",
         "mysql",
         "mysql::server",
+        "redis",
         "anyenv",
         "workspace",
         "workspace::project",
+        "npm",
         "gem"
     ]
 }
