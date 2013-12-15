@@ -26,6 +26,7 @@ sysstat
 file
 lsof
 git
+git-svn
 ngrep
 libmemcached
 libmemcached-devel
