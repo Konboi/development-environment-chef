@@ -4,6 +4,9 @@
         "home": "/home/vagrant"
     },
 
+    "gem": [
+        "rails"
+    ],
 
     "run_list":[
         "yum",
@@ -16,6 +19,7 @@
         "mysql::server",
         "anyenv",
         "workspace",
-        "workspace::project"
+        "workspace::project",
+        "gem"
     ]
 }
