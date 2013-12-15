@@ -1,4 +1,4 @@
 site :opscode
 
 cookbook 'yum'
-cookbook 'rbenv', github: 'fnichol/chef-rbenv'
+cookbook 'anyenv', github: "Konboi/cookbooks-anyenv"
