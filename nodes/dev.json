@@ -1,19 +1,21 @@
 {
-  "user": {
-      "name": "vagrant",
-      "home": "/home/vagrant"
-  },
+    "user": {
+        "name": "vagrant",
+        "home": "/home/vagrant"
+    },
 
 
-  "run_list":[
-    "yum",
-    "yum::epel",
-    "yum::remi",
-    "common-packages",
-    "iptables",
-    "nginx",
-    "mysql",
-    "mysql::server",
-    "anyenv"
-  ]
+    "run_list":[
+        "yum",
+        "yum::epel",
+        "yum::remi",
+        "common-packages",
+        "iptables",
+        "nginx",
+        "mysql",
+        "mysql::server",
+        "anyenv",
+        "workspace",
+        "workspace::project"
+    ]
 }
