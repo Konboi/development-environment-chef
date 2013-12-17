@@ -9,9 +9,9 @@
 
 node["npm"].each do |name|
   bash "install npm #{name}" do
-    user node["user"]["name"]
+    user  node["user"]["name"]
     group node["user"]["name"]
-    cwd node["user"]["home"]
+    cwd   node["user"]["home"]
     environment "HOME" => node["user"]["home"]
 
     code <<-EOF
