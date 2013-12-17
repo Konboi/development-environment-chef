@@ -38,12 +38,13 @@ screen
 ImageMagick
 ImageMagick-devel
 openssl
-openssl-devel 
-readline 
-libyaml-devel 
-readline-devel 
-zlib 
+openssl-devel
+readline
+libyaml-devel
+readline-devel
+zlib
 zlib-devel
+tig
 )
 
 packages.each do |p|
