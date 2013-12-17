@@ -1,0 +1,19 @@
+server {
+    listen   <%= node["nginx"]["port"] %>;
+    access_log /var/log/nginx/access.log;
+    error_log  /var/log/nginx/error.log;
+    server_name workspace.local;
+    client_max_body_size 10M;
+
+
+    location / {
+      root   /usr/share/nginx/html;
+      index  index.html index.htm;
+    }
+
+    <% node["nginx"]["projects"].each do |project| %>
+    location /<%= project["name"] %> {
+      alias <%= project["root"] %>;
+    }
+    <% end %>
+}
