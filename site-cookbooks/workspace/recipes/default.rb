@@ -15,7 +15,7 @@ directory "/home/vagrant/workspace" do
   not_if { File.exists? "/home/vagrant/workspace" }
 end
 
-programming_languages = %(ruby javascript perl others)
+programming_languages = %w(ruby javascript perl others)
 
 programming_languages.each do |language|
   directory "/home/vagrant/workspace/#{language}" do
