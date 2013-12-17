@@ -15,7 +15,9 @@ node["npm"].each do |name|
     environment "HOME" => node["user"]["home"]
 
     code <<-EOF
-    #{node["user"]["home"]}/.anyenv/envs/ndenv/shims/npm install -g #{name}
+    source ~/.bashrc
+    npm install -g #{name}
+    ndenv rehash
     EOF
 
     not_if "npm ls -g | grep #{name}"
