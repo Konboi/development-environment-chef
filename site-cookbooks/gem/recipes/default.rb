@@ -9,13 +9,15 @@
 
 node["gem"].each do |name|
   bash "install gem global" do
-    user node["user"]["name"]
+    user  node["user"]["name"]
     group node["user"]["name"]
-    cwd node["user"]["home"]
+    cwd   node["user"]["home"]
     environment "HOME" => node["user"]["home"]
 
     code <<-EOF
-    #{node["user"]["home"]}/.anyenv/envs/rbenv/shims/gem install #{name}
+    source ~/.bashrc
+    gem install --no-ri --no-rdoc #{name}
+    rbenv rehash
     EOF
 
     not_if "gem list --local | grep #{name}"
