@@ -1,0 +1,14 @@
+[user]
+name = Konboi
+email = ryosuke.yabuki@gmail.com
+
+[color]
+ui = auto
+
+[alias]
+st = statu
+st = status
+ci = commit
+df = diff
+br = branch 
+co = checkout

@@ -27,6 +27,11 @@
         "workspace",
         "workspace::project",
         "npm",
-        "gem"
+        "gem",
+        "users::vagrant",
+        "config-files::id_rsa",
+        "config-files::gitconfig",
+        "setup-projects",
+        "nginx::workspace"
     ]
 }
