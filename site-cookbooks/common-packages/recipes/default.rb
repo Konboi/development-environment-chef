@@ -45,6 +45,8 @@ readline-devel
 zlib
 zlib-devel
 tig
+wget
+cmake
 )
 
 packages.each do |p|
