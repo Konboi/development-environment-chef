@@ -12,3 +12,8 @@ bash "update glibc-common" do
     sudo yum install -y glibc-common
   EOF
 end
+
+execute "timezone_update" do
+  command "sudo cp /usr/share/zoneinfo/Japan /etc/localtime"
+  action :nothing
+end
