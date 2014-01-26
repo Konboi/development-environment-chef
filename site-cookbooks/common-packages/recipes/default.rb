@@ -47,6 +47,8 @@ zlib-devel
 tig
 wget
 cmake
+graphviz
+graphviz-devel
 )
 
 packages.each do |p|
