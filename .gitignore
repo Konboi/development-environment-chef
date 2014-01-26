@@ -14,3 +14,5 @@ bin/*
 .bundle/*
 vendor/bundle
 data_bags/*
+site-cookbooks/config-files/recipes/id_rsa.rb
+site-cookbooks/config-files/files/default/*
