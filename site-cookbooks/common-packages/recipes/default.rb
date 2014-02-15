@@ -19,7 +19,6 @@ telnet
 nc
 iotop
 dstat
-vim-enhanced
 ack
 mlocate
 sysstat

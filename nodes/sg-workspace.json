@@ -33,6 +33,7 @@
     "japanese-locale-setting",
     "common-packages",
     "iptables",
+    "vim",
     "nginx",
     "mysql",
     "mysql::server",
