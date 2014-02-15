@@ -1,0 +1,54 @@
+{
+  "user": {
+    "name": "vagrant",
+    "home": "/home/vagrant"
+  },
+
+  "gem": [
+    "rails",
+    "sinatra",
+    "bundler"
+  ],
+
+  "npm": [
+    "jshint",
+    "grunt-cli",
+    "tern",
+    "hotnode"
+  ],
+
+  "nginx": {
+    "port": 80,
+    "projects": [
+      {
+        "name": "presentations",
+        "root": "/home/vagrant/workspace/javascript/presentation-tools"
+      }
+    ]
+  },
+
+  "run_list":[
+    "yum",
+    "yum-epel",
+    "japanese-locale-setting",
+    "common-packages",
+    "iptables",
+    "nginx",
+    "mysql",
+    "mysql::server",
+    "redis",
+    "anyenv",
+    "workspace",
+    "workspace::project",
+    "workspace::git",
+    "npm",
+    "gem",
+    "users::vagrant",
+    "config-files::id_rsa",
+    "config-files::gitconfig",
+    "config-files::tmuxconf",
+    "config-files::vim-config",
+    "setup-projects",
+    "nginx::workspace"
+  ]
+}
