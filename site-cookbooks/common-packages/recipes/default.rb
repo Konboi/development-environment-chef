@@ -41,6 +41,8 @@ openssl
 openssl-devel
 readline
 libyaml-devel
+libxslt-devel
+libxml2-devel
 readline-devel
 zlib
 zlib-devel
