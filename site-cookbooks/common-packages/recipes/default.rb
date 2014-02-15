@@ -51,6 +51,7 @@ wget
 cmake
 graphviz
 graphviz-devel
+ctags
 )
 
 packages.each do |p|
