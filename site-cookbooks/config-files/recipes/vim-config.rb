@@ -17,15 +17,27 @@ end
 bash "install vim config" do
 		user node["user"]["name"]
 		group node["user"]["name"]
-		
+
 		code <<-EOF
 		cd /home/#{node["user"]["name"]}/config/
-		git clone git@github.com:Konboi/vim-config.git 
+		git clone git@github.com:Konboi/vim-config.git
 		EOF
 
 		not_if { File.exists? "/home/#{node["user"]["name"]}/config/vim-config"}
 end
 
-link "/home/#{node["user"]["name"]}/.vimrc" do 
+bash "install neo bundle" do
+    user node["user"]["name"]
+    group node["user"]["name"]
+
+    code <<-EOF
+      cd /home/#{node["user"]["name"]}/
+      git clone https://github.com/Shougo/neobundle.vim.git /home/vagrant/.vim/bundle/neobundle.vim
+    EOF
+
+    not_if { File.exists? "/home/#{node["user"]["name"]}/.vim/bundle/neobundle.vim"}
+end
+
+link "/home/#{node["user"]["name"]}/.vimrc" do
 		to "/home/#{node["user"]["name"]}/config/vim-config/vimrc"
 end
