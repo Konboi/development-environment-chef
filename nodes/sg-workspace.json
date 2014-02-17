@@ -30,6 +30,7 @@
   "run_list":[
     "yum",
     "yum-epel",
+    "yum-remi",
     "japanese-locale-setting",
     "common-packages",
     "iptables",
