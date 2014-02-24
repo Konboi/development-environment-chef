@@ -8,6 +8,7 @@
 #
 packages = %w(
 curl
+expat-devel
 gcc-c++
 libpng
 libpng-devel
