@@ -52,6 +52,7 @@
     "config-files::tmuxconf",
     "config-files::vim-config",
     "setup-projects",
-    "nginx::workspace"
+    "nginx::workspace",
+    "td-agent"
   ]
 }
