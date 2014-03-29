@@ -51,7 +51,10 @@
     "config-files::gitconfig",
     "config-files::tmuxconf",
     "config-files::vim-config",
+    "config-files::git-completion",
+    "config-files::git-prompt",
     "setup-projects",
-    "nginx::workspace"
+    "nginx::workspace",
+    "td-agent"
   ]
 }
