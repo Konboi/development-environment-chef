@@ -7,8 +7,10 @@ server {
 
 
     location / {
-      root   /usr/share/nginx/html;
-      index  index.html index.htm;
+      # サブディレクトリで運用するため
+      rewrite ^/$ /campaign redirect;
+      #root   /usr/share/nginx/html;
+      #index  index.html index.htm;
     }
 
     <% node["nginx"]["projects"].each do |project| %>

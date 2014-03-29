@@ -51,6 +51,7 @@ wget
 cmake
 graphviz
 graphviz-devel
+s3cmd
 )
 
 packages.each do |p|

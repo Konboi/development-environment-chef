@@ -22,6 +22,12 @@ projects.each do |prj|
       cd   #{node["user"]["home"]}/project
       echo #{project["password"]} | git svn clone --username #{project["user_name"]} #{project["repository"]} #{project["id"]}
       EOF
+    elsif project["type"] == "gitpub"
+      code <<-EOF
+	  echo #{project["password"]} | ssh-agent ~/.ssh/id_rsa
+      cd   #{node["user"]["home"]}/project
+      git clone #{project["repository"]} #{project["id"]}
+      EOF
     end
 
     not_if "ls -l #{node["user"]["home"]}/project | grep #{project["id"]}"

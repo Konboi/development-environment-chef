@@ -21,3 +21,10 @@ cookbook_file "#{node["user"]["home"]}/.ssh/id_rsa" do
   group node["user"]["name"]
   mode 0600
 end
+
+# set id_rsa.pub
+cookbook_file "#{node["user"]["home"]}/.ssh/id_rsa.pub" do
+  owner node["user"]["name"]
+  group node["user"]["name"]
+  mode 0600
+end
