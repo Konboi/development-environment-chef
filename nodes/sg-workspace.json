@@ -55,6 +55,7 @@
     "config-files::git-prompt",
     "setup-projects",
     "nginx::workspace",
-    "td-agent"
+    "td-agent",
+    "emacs"
   ]
 }
