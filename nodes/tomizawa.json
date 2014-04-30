@@ -2,5 +2,9 @@
     "common-packages",
     "iptables",
     "apache",
-    "php"
+    "php",
+    "mysql",
+    "mysql::server",
+    // for development
+    "emacs"
 ]}
