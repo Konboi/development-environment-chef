@@ -31,7 +31,7 @@ bash "rename timeout command" do
     mv /usr/bin/timeout /usr/bin/timeout-backup
   EOC
 
-  if {File.exists? "/usr/bin/timeout-backup"}
+  not_if {File.exists? "/usr/bin/timeout-backup"}
 end
 
 bash "cask install" do
