@@ -17,6 +17,7 @@ end
 bash "git-prompt" do
   user  node[:user][:name]
   group node[:user][:name]
+  environment "HOME" => node[:user][:home]
 
   bash_config = "GIT_PS1_SHOWDIRTYSTATE=true \n"
   bash_config = bash_config + "PS1='\[\033[40;1;32m\]\\u" + "\[\033[2;32m\]@\[\033[0m\]\[\033[40;32m\]\h \[\033[1;36m\]\w \[\033[31m\]$(__git_ps1 \"[%s]\" )\[\033[00m\] \[\033[0m\]\[\033[40;2;37m\]`date +\"%Y/%m/%d %p %H:%M:%S\"` \[\033[0m\]\n\\$  '\n"
