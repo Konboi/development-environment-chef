@@ -1,10 +1,24 @@
-{"run_list":[
-    "common-packages",
-    "iptables",
-    "apache",
-    "php",
-    "mysql",
-    "mysql::server",
-    // for development
-    "emacs"
-]}
+{
+
+    "user": {
+        "home": "/home/vagrant",
+        "name": "vagrant"
+    },
+
+    "run_list":[
+        "common-packages",
+        "iptables",
+        "apache",
+        "php",
+        "mysql",
+        "mysql::server",
+
+        // for development
+        "emacs",
+        "config-files",
+        //"config-files::emacs-config",
+        "config-files::id_rsa",
+        "config-files::gitconfig"
+
+    ]
+}

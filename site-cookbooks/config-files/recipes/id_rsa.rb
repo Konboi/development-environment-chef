@@ -12,6 +12,7 @@ directory "#{node["user"]["home"]}/.ssh" do
   owner node["user"]["name"]
   group node["user"]["name"]
   mode 0700
+
   action :create
 end
 
@@ -19,6 +20,7 @@ end
 cookbook_file "#{node["user"]["home"]}/.ssh/id_rsa" do
   owner node["user"]["name"]
   group node["user"]["name"]
+
   mode 0600
 end
 
@@ -26,5 +28,6 @@ end
 cookbook_file "#{node["user"]["home"]}/.ssh/id_rsa.pub" do
   owner node["user"]["name"]
   group node["user"]["name"]
+
   mode 0600
 end

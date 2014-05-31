@@ -23,18 +23,25 @@ bash "install emacs" do
     make install
   EOF
 
-  not_if {File.exists? "/usr/local/emacs"}
+  not_if {File.exists? "/usr/local/bin/emacs"}
 end
 
+bash "rename timeout command" do
+  code <<-EOC
+    mv /usr/bin/timeout /usr/bin/timeout-backup
+  EOC
 
+  if {File.exists? "/usr/bin/timeout-backup"}
+end
 
+bash "cask install" do
+  user node[:user][:name]
+  cwd  node[:user][:home]
+  environment "HOME" => node[:user][:home]
 
+  code <<-EOF
+    curl -fsSkL https://raw.github.com/cask/cask/master/go | python
+  EOF
 
-
-
-
-
-
-
-
-
+  not_if {File.exists? "#{node[:user][:home]}/.cask"}
+end

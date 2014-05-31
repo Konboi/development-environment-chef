@@ -399,7 +399,7 @@ DocumentRoot "/var/www/html"
 # negotiated documents.  The MultiViews Option can be used for the 
 # same purpose, but it is much slower.
 #
-DirectoryIndex index.html index.html.var
+DirectoryIndex index.html index.php
 
 #
 # AccessFileName: The name of the file to look for in each directory
@@ -793,7 +793,7 @@ AddType application/x-pkcs7-crl    .crl
 # To use CGI scripts outside of ScriptAliased directories:
 # (You will also need to add "ExecCGI" to the "Options" directive.)
 #
-#AddHandler cgi-script .cgi
+#AddHandler cgi-script .cgi .php
 
 #
 # For files that include their own HTTP headers:
@@ -815,6 +815,7 @@ AddHandler type-map var
 #
 AddType text/html .shtml
 AddOutputFilter INCLUDES .shtml
+AddType application/x-httpd-php .php
 
 #
 # Action lets you define media types that will execute a script whenever

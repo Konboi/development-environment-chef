@@ -6,3 +6,9 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+directory "#{node[:user][:home]}/config" do
+  owner node[:user][:name]
+  group node[:user][:name]
+  mode  0755
+end
