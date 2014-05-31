@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-directory "/home/#{node[:user][:name]}/.bash" do
+directory "#{node[:user][:home]}/.bash" do
   owner node[:user][:name]
   group node[:user][:name]
 
@@ -17,12 +17,13 @@ end
 bash "git-completion" do
   user  node[:user][:name]
   group node[:user][:name]
+  environment "HOME" => node[:user][:home]
 
   code <<-EOF
-    wget wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh  -P /home/#{node[:user][:name]}/.bash/
+    wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -P #{node[:user][:home]}/.bash/
     echo 'source ~/.bash/git-completion.bash' >>  /home/#{node[:user][:name]}/.bashrc
   EOF
 
-  not_if "ls -l /home/#{node[:user][:name]}/.bash/ | grep git-completion"
+  not_if "ls -l #{node[:user][:home]}/.bash/ | grep git-completion"
 end
 
