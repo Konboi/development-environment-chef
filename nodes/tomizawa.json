@@ -12,13 +12,14 @@
         "php",
         "mysql",
         "mysql::server",
+        "anyenv",
 
         // for development
         "emacs",
         "config-files",
         //"config-files::emacs-config",
         "config-files::id_rsa",
-        "config-files::gitconfig"
-
+        "config-files::gitconfig",
+        "config-files::tmuxconf"
     ]
 }
